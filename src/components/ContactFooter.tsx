@@ -107,6 +107,7 @@ const ContactFooter = () => {
               />
               <textarea
                 placeholder="Votre message"
+                name="message"
                 rows={3}
                 required
                 className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
