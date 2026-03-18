@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import sefedLogo from "@/assets/sefed-logo.png";
 
 const navLinks = [
   { label: "Accueil", href: "#" },
