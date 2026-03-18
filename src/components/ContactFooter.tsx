@@ -120,7 +120,7 @@ const ContactFooter = () => {
         <div className="mt-16 pt-6 border-t border-primary-foreground/15 flex flex-col items-center gap-4">
           <div className="flex items-center gap-5">
             <a
-              href="https://www.instagram.com/sefed_restaurant/"
+              href="https://www.instagram.com/sefedmontpellier/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-foreground/70 hover:text-secondary transition-colors"
