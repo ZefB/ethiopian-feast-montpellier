@@ -95,8 +95,12 @@ const ContactFooter = () => {
                 <Mail className="w-4 h-4 text-secondary" />
                 <p className="font-body font-semibold text-sm">Contactez-nous</p>
               </div>
+              <input type="hidden" name="_next" value="https://id-preview--7f2e76cd-da76-4f44-a843-a3bffd1b2099.lovable.app/#contact" />
+              <input type="hidden" name="_subject" value="Nouveau message depuis le site Sefed" />
+              <input type="hidden" name="_captcha" value="false" />
               <input
                 type="email"
+                name="email"
                 placeholder="Votre email"
                 required
                 className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary/50"
