@@ -57,7 +57,10 @@ const ContactFooter = () => {
                 <p className="font-semibold text-base opacity-100">Adresse</p>
                 <p>4 Bd Louis Blanc, 34000 Montpellier</p>
                 <p className="text-xs opacity-70 mt-1">
-                  Entre les stations Corum et Louis-Blanc (Ligne 1 & 4)
+                  🚊 2 min à pied du tram Louis Blanc (lignes 1 & 4)
+                </p>
+                <p className="text-xs opacity-70">
+                  🚊 5 min à pied du tram Corum (ligne 2)
                 </p>
               </div>
             </div>
