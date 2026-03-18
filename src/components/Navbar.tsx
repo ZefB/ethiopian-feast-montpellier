@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import sefedLogo from "@/assets/sefed-logo.png";
 
 const navLinks = [
   { label: "Accueil", href: "#" },
@@ -30,8 +31,9 @@ const Navbar = () => {
       }`}
     >
       <div className="container max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        <a href="#" className="font-display text-2xl font-bold text-primary">
-          Sefed
+        <a href="#" className="flex items-center gap-2">
+          <img src={sefedLogo} alt="Sefed" className="h-10 w-10 rounded-full object-cover" />
+          <span className="font-display text-2xl font-bold text-primary">Sefed</span>
         </a>
 
         {/* Desktop */}
