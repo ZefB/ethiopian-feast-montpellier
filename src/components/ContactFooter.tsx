@@ -57,7 +57,10 @@ const ContactFooter = () => {
                 <p className="font-semibold text-base opacity-100">Adresse</p>
                 <p>4 Bd Louis Blanc, 34000 Montpellier</p>
                 <p className="text-xs opacity-70 mt-1">
-                  Entre les stations Corum et Louis-Blanc (Ligne 1 & 4)
+                  🚊 2 min à pied du tram Louis Blanc (lignes 1 & 4)
+                </p>
+                <p className="text-xs opacity-70">
+                  🚊 5 min à pied du tram Corum (ligne 2)
                 </p>
               </div>
             </div>
@@ -85,23 +88,26 @@ const ContactFooter = () => {
             {/* Simple contact form */}
             <form
               className="pt-4 space-y-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Merci pour votre message ! Nous vous répondrons rapidement.");
-              }}
+              action="https://formsubmit.co/ethiosefed@gmail.com"
+              method="POST"
             >
               <div className="flex items-center gap-2 mb-1">
                 <Mail className="w-4 h-4 text-secondary" />
                 <p className="font-body font-semibold text-sm">Contactez-nous</p>
               </div>
+              <input type="hidden" name="_next" value="https://id-preview--7f2e76cd-da76-4f44-a843-a3bffd1b2099.lovable.app/#contact" />
+              <input type="hidden" name="_subject" value="Nouveau message depuis le site Sefed" />
+              <input type="hidden" name="_captcha" value="false" />
               <input
                 type="email"
+                name="email"
                 placeholder="Votre email"
                 required
                 className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary/50"
               />
               <textarea
                 placeholder="Votre message"
+                name="message"
                 rows={3}
                 required
                 className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
