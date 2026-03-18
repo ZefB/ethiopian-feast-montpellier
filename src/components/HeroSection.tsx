@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-platter.jpg";
+import sefedLogo from "@/assets/sefed-logo.png";
 
 const HeroSection = () => {
   return (
@@ -15,14 +16,14 @@ const HeroSection = () => {
         style={{ background: "var(--gradient-hero-overlay)" }}
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <motion.h1
+        <motion.img
+          src={sefedLogo}
+          alt="Sefed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-4 tracking-tight"
-        >
-          Sefed
-        </motion.h1>
+          className="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full object-cover mb-4"
+        />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
