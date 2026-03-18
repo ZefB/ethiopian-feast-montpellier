@@ -88,10 +88,8 @@ const ContactFooter = () => {
             {/* Simple contact form */}
             <form
               className="pt-4 space-y-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Merci pour votre message ! Nous vous répondrons rapidement.");
-              }}
+              action="https://formsubmit.co/ethiosefed@gmail.com"
+              method="POST"
             >
               <div className="flex items-center gap-2 mb-1">
                 <Mail className="w-4 h-4 text-secondary" />

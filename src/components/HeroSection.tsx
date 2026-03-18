@@ -22,7 +22,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full object-cover mb-4"
+          className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover mb-4 scale-[1.35]"
         />
         <motion.p
           initial={{ opacity: 0, y: 20 }}
