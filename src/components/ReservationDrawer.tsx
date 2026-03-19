@@ -70,11 +70,16 @@ const ReservationDrawer = () => {
                   {/* Hours */}
                   <div className="pt-4 border-t border-border">
                     <p className="font-display text-lg font-semibold text-foreground mb-3">Horaires</p>
-                    <div className="font-body text-sm text-muted-foreground space-y-1">
-                      <p>Mar – Jeu : 12h–14h / 19h–22h</p>
-                      <p>Vendredi : 12h–14h / 19h–22h30</p>
-                      <p>Samedi : 19h–22h30</p>
-                      <p className="text-accent font-medium mt-2">Fermé Dimanche & Lundi</p>
+                    <div className="font-body text-sm text-muted-foreground space-y-2">
+                      <div className="flex justify-between">
+                        <span className="font-medium text-foreground">Mardi → Samedi</span>
+                        <span>18h30 – 22h30</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="font-medium text-foreground">Vendredi & Samedi midi</span>
+                        <span>12h – 15h</span>
+                      </div>
+                      <p className="text-accent font-medium mt-3">Fermé le dimanche & lundi</p>
                     </div>
                   </div>
                 </div>

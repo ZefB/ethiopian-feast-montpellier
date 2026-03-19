@@ -79,9 +79,9 @@ const ContactFooter = () => {
               <Clock className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
               <div className="font-body text-sm opacity-85">
                 <p className="font-semibold text-base opacity-100">Horaires</p>
-                <p>Mar – Jeu : 12h–14h / 19h–22h</p>
-                <p>Vendredi : 12h–14h / 19h–22h30</p>
-                <p>Samedi : 19h–22h30</p>
+                <p>Mardi → Samedi : 18h30 – 22h30</p>
+                <p>Vendredi & Samedi midi : 12h – 15h</p>
+                <p className="opacity-70 mt-1">Fermé le dimanche & lundi</p>
               </div>
             </div>
 
