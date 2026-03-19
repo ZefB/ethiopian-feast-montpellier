@@ -80,16 +80,28 @@ const ReservationDrawer = ({ isOpen, onClose }: ReservationDrawerProps) => {
                       <Clock className="w-5 h-5 text-secondary" />
                       <p className="font-display text-lg font-semibold text-foreground">Horaires</p>
                     </div>
-                    <div className="font-body text-sm text-muted-foreground space-y-3">
-                      <div className="flex justify-between items-center py-2 px-4 rounded-md bg-muted/50">
-                        <span className="font-medium text-foreground">Mardi → Samedi soir</span>
-                        <span>18h30 – 22h30</span>
-                      </div>
-                      <div className="flex justify-between items-center py-2 px-4 rounded-md bg-muted/50">
-                        <span className="font-medium text-foreground">Vendredi & Samedi midi</span>
-                        <span>12h – 15h</span>
-                      </div>
-                      <p className="text-accent font-medium text-center mt-3">Fermé le dimanche & lundi</p>
+                    <div className="font-body text-sm text-muted-foreground space-y-2">
+                      {[
+                        { day: "Lundi", hours: "Fermé" },
+                        { day: "Mardi", hours: "18h30 – 22h30" },
+                        { day: "Mercredi", hours: "18h30 – 22h30" },
+                        { day: "Jeudi", hours: "18h30 – 22h30" },
+                        { day: "Vendredi", hours: "12h – 15h / 18h30 – 22h30" },
+                        { day: "Samedi", hours: "12h – 15h / 18h30 – 22h30" },
+                        { day: "Dimanche", hours: "Fermé" },
+                      ].map(({ day, hours }) => (
+                        <div
+                          key={day}
+                          className={`flex justify-between items-center py-2 px-4 rounded-md ${
+                            hours === "Fermé" ? "opacity-50" : "bg-muted/50"
+                          }`}
+                        >
+                          <span className="font-medium text-foreground">{day}</span>
+                          <span className={hours === "Fermé" ? "text-accent font-medium" : ""}>
+                            {hours}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 

@@ -77,11 +77,11 @@ const ContactFooter = () => {
 
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
-              <div className="font-body text-sm opacity-85">
-                <p className="font-semibold text-base opacity-100">Horaires</p>
-                <p>Mardi → Samedi : 18h30 – 22h30</p>
-                <p>Vendredi & Samedi midi : 12h – 15h</p>
-                <p className="opacity-70 mt-1">Fermé le dimanche & lundi</p>
+              <div className="font-body text-sm opacity-85 space-y-1">
+                <p className="font-semibold text-base opacity-100 mb-2">Horaires</p>
+                <p><span className="opacity-70">Lun / Dim :</span> Fermé</p>
+                <p><span className="opacity-70">Mar – Jeu :</span> 18h30 – 22h30</p>
+                <p><span className="opacity-70">Ven – Sam :</span> 12h – 15h / 18h30 – 22h30</p>
               </div>
             </div>
 
