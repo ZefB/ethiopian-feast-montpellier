@@ -84,8 +84,10 @@ const IntroductionSection = () => {
               authentique et conviviale.
             </p>
             <p className="font-body text-muted-foreground leading-relaxed">
-              On y mange avec les doigts en partageant en famille et entre amis comme le veut la tradition,
-              autour de grands plateaux servis sur de magnifiques paniers tressés — les <em className="text-foreground font-medium">Sefed</em>.
+              Situé au cœur de Montpellier, entre le Corum et l'Esplanade Charles-de-Gaulle,
+              notre restaurant vous invite à partager un moment unique autour de plats préparés
+              avec passion et savoir-faire traditionnel — à déguster avec les doigts, en famille
+              ou entre amis, comme le veut la tradition éthiopienne.
             </p>
           </motion.div>
         </div>
