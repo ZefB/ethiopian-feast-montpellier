@@ -3,15 +3,18 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import sefedLogo from "@/assets/sefed-logo.png";
 
+interface NavbarProps {
+  onOpenReservation?: () => void;
+}
+
 const navLinks = [
   { label: "Accueil", href: "#" },
   { label: "Le Restaurant", href: "#introduction" },
   { label: "Menu", href: "#menu" },
-  { label: "Réserver", href: "#reserver" },
   { label: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ onOpenReservation }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -53,6 +56,12 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={onOpenReservation}
+            className="px-5 py-2 rounded-md bg-accent text-accent-foreground font-body font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+          >
+            Réserver
+          </button>
         </div>
 
         {/* Mobile toggle */}
@@ -77,6 +86,15 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <button
+            onClick={() => {
+              setMobileOpen(false);
+              onOpenReservation?.();
+            }}
+            className="block w-full text-left font-body text-sm font-semibold text-accent py-2"
+          >
+            Réserver
+          </button>
         </div>
       )}
     </motion.nav>
