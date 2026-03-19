@@ -36,7 +36,7 @@ const ReservationDrawer = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed right-0 top-0 h-full w-full max-w-md z-50 bg-background border-l border-border overflow-y-auto"
+              className="fixed right-0 top-0 h-full w-full max-w-lg z-50 bg-background border-l border-border overflow-y-auto"
               style={{ boxShadow: "-10px 0 40px hsla(25, 22%, 15%, 0.15)" }}
             >
               <div className="p-8">
