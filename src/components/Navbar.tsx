@@ -6,6 +6,7 @@ import sefedLogo from "@/assets/sefed-logo.png";
 const navLinks = [
   { label: "Accueil", href: "#" },
   { label: "Le Restaurant", href: "#introduction" },
+  { label: "Menu", href: "#menu" },
   { label: "Contact", href: "#contact" },
 ];
 
