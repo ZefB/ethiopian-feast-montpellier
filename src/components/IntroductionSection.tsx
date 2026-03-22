@@ -106,13 +106,13 @@ const IntroductionSection = () => {
             </h3>
             <p className="font-body text-muted-foreground leading-relaxed mb-4">
               Chaque assiette servie chez Sefed est le reflet de la cuisine éthiopienne à son meilleur,
-              fabriquée à la main avec les produits les plus frais, les meilleures viandes et les
-              meilleurs légumes, herbes et épices disponibles.
+              préparée avec les produits les plus frais et sublimée par des épices traditionnelles
+              comme le Berbere et le Mitmita.
             </p>
             <p className="font-body text-muted-foreground leading-relaxed">
-              Du Doro Wat mijoté pendant 6 heures au café Jebena Buna préparé selon la tradition,
-              notre menu met l'accent sur une grande variété de plats végétariens et à base de viande.
-              Passée la première surprise, on apprend à aimer le mélange de saveurs entre l'Injera et les plats.
+              Notre carte propose une grande variété de plats — des ragoûts mijotés aux émincés sautés à l'Awaze,
+              en passant par le Kitfo, le Shiro et une sélection généreuse de plats végétariens.
+              Le tout servi sur de l'Injera, pain au Teff légèrement acidulé, pour une expérience de partage unique.
             </p>
           </motion.div>
           <motion.div
