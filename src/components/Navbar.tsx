@@ -1,28 +1,37 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import sefedLogo from "@/assets/sefed-logo.png";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 interface NavbarProps {
   onOpenReservation?: () => void;
 }
 
-const navLinks = [
-  { label: "Accueil", href: "#" },
-  { label: "Le Restaurant", href: "#introduction" },
-  { label: "Menu", href: "#menu" },
-  { label: "Contact", href: "#contact" },
-];
-
 const Navbar = ({ onOpenReservation }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, setLang } = useLang();
+
+  const navLinks = [
+    { label: t(translations.nav.accueil, lang), href: "#" },
+    { label: t(translations.nav.restaurant, lang), href: "#introduction" },
+    { label: t(translations.nav.menu, lang), href: "#menu" },
+    { label: t(translations.nav.reserver, lang), href: "#reserve" },
+    { label: t(translations.nav.contact, lang), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleReserveClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onOpenReservation?.();
+  };
 
   return (
     <motion.nav
@@ -43,34 +52,65 @@ const Navbar = ({ onOpenReservation }: NavbarProps) => {
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`font-body text-sm font-medium transition-colors ${
-                scrolled
-                  ? "text-foreground hover:text-primary"
-                  : "text-primary-foreground/90 hover:text-primary-foreground"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href === "#reserve" ? (
+              <a
+                key={link.label}
+                href="#"
+                onClick={handleReserveClick}
+                className={`font-body text-sm font-medium transition-colors ${
+                  scrolled
+                    ? "text-foreground hover:text-primary"
+                    : "text-primary-foreground/90 hover:text-primary-foreground"
+                }`}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`font-body text-sm font-medium transition-colors ${
+                  scrolled
+                    ? "text-foreground hover:text-primary"
+                    : "text-primary-foreground/90 hover:text-primary-foreground"
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          )}
+
+          {/* Language toggle */}
           <button
-            onClick={onOpenReservation}
-            className="px-5 py-2 rounded-md bg-accent text-accent-foreground font-body font-semibold text-sm uppercase tracking-wider hover:opacity-90 transition-opacity"
+            onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+            className={`flex items-center gap-1.5 font-body text-xs font-semibold uppercase tracking-wider transition-colors ${
+              scrolled
+                ? "text-foreground hover:text-primary"
+                : "text-primary-foreground/90 hover:text-primary-foreground"
+            }`}
+            aria-label="Toggle language"
           >
-            Réserver
+            <Globe className="w-4 h-4" />
+            {lang === "fr" ? "EN" : "FR"}
           </button>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+            className={`p-2 font-body text-xs font-bold uppercase ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          >
+            {lang === "fr" ? "EN" : "FR"}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -79,22 +119,21 @@ const Navbar = ({ onOpenReservation }: NavbarProps) => {
           {navLinks.map((link) => (
             <a
               key={link.label}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
+              href={link.href === "#reserve" ? "#" : link.href}
+              onClick={(e) => {
+                if (link.href === "#reserve") {
+                  e.preventDefault();
+                  setMobileOpen(false);
+                  onOpenReservation?.();
+                } else {
+                  setMobileOpen(false);
+                }
+              }}
               className="block font-body text-sm font-medium text-foreground py-2 hover:text-primary transition-colors"
             >
               {link.label}
             </a>
           ))}
-          <button
-            onClick={() => {
-              setMobileOpen(false);
-              onOpenReservation?.();
-            }}
-            className="block w-full text-left font-body text-sm font-semibold text-accent py-2"
-          >
-            Réserver
-          </button>
         </div>
       )}
     </motion.nav>

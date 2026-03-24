@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-platter.jpg";
 import sefedLogo from "@/assets/sefed-logo.png";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const HeroSection = () => {
+  const { lang } = useLang();
+
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
       <img
@@ -30,7 +34,7 @@ const HeroSection = () => {
           transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
           className="font-display italic text-2xl md:text-3xl text-secondary mb-6"
         >
-          Cuisine Éthiopienne Authentique
+          {t(translations.hero.subtitle, lang)}
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +42,7 @@ const HeroSection = () => {
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
           className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl leading-relaxed"
         >
-          Découvrez les saveurs authentiques de l'Éthiopie à Montpellier, où chaque bouchée est une invitation au voyage culinaire.
+          {t(translations.hero.description, lang)}
         </motion.p>
         <motion.a
           href="#introduction"
@@ -47,7 +51,7 @@ const HeroSection = () => {
           transition={{ duration: 0.9, delay: 0.6, ease: "easeOut" }}
           className="mt-8 px-8 py-3 rounded-md bg-accent text-accent-foreground font-body font-semibold text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
         >
-          Découvrir
+          {t(translations.hero.cta, lang)}
         </motion.a>
       </div>
     </section>

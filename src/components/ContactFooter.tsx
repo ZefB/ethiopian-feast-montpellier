@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Mail, Instagram, Facebook } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const ContactFooter = () => {
+  const { lang } = useLang();
+  const tr = translations.contact;
+  const res = translations.reservation;
+
   return (
     <footer
       id="contact"
@@ -17,13 +23,12 @@ const ContactFooter = () => {
           className="text-center mb-12"
         >
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">
-            Nous Trouver
+            {t(tr.title, lang)}
           </h2>
           <div className="w-16 h-1 bg-secondary mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -43,7 +48,6 @@ const ContactFooter = () => {
             />
           </motion.div>
 
-          {/* Info + Contact form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -54,21 +58,17 @@ const ContactFooter = () => {
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
               <div className="font-body text-sm opacity-85">
-                <p className="font-semibold text-base opacity-100">Adresse</p>
+                <p className="font-semibold text-base opacity-100">{t(tr.adresse, lang)}</p>
                 <p>4 Bd Louis Blanc, 34000 Montpellier</p>
-                <p className="text-xs opacity-70 mt-1">
-                  🚊 2 min à pied du tram Louis Blanc (lignes 1 & 4)
-                </p>
-                <p className="text-xs opacity-70">
-                  🚊 5 min à pied du tram Corum (ligne 2)
-                </p>
+                <p className="text-xs opacity-70 mt-1">{t(tr.tramLouis, lang)}</p>
+                <p className="text-xs opacity-70">{t(tr.tramCorum, lang)}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <Phone className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
               <div className="font-body text-sm opacity-85">
-                <p className="font-semibold text-base opacity-100">Téléphone</p>
+                <p className="font-semibold text-base opacity-100">{t(tr.telephone, lang)}</p>
                 <a href="tel:0659144044" className="hover:text-secondary transition-colors">
                   06 59 14 40 44
                 </a>
@@ -78,14 +78,13 @@ const ContactFooter = () => {
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
               <div className="font-body text-sm opacity-85 space-y-1">
-                <p className="font-semibold text-base opacity-100 mb-2">Horaires</p>
-                <p><span className="opacity-70">Lun / Dim :</span> Fermé</p>
-                <p><span className="opacity-70">Mar – Jeu :</span> 18h30 – 22h30</p>
-                <p><span className="opacity-70">Ven – Sam :</span> 12h – 15h / 18h30 – 22h30</p>
+                <p className="font-semibold text-base opacity-100 mb-2">{t(tr.horaires, lang)}</p>
+                <p><span className="opacity-70">{t(res.days.lundi, lang)} / {t(res.days.dimanche, lang)} :</span> {t(res.closed, lang)}</p>
+                <p><span className="opacity-70">{t(res.days.mardi, lang)} – {t(res.days.jeudi, lang)} :</span> 18h30 – 22h30</p>
+                <p><span className="opacity-70">{t(res.days.vendredi, lang)} – {t(res.days.samedi, lang)} :</span> 12h – 15h / 18h30 – 22h30</p>
               </div>
             </div>
 
-            {/* Simple contact form */}
             <form
               className="pt-4 space-y-3"
               action="https://formsubmit.co/ethiosefed@gmail.com"
@@ -93,7 +92,7 @@ const ContactFooter = () => {
             >
               <div className="flex items-center gap-2 mb-1">
                 <Mail className="w-4 h-4 text-secondary" />
-                <p className="font-body font-semibold text-sm">Contactez-nous</p>
+                <p className="font-body font-semibold text-sm">{t(tr.contactUs, lang)}</p>
               </div>
               <input type="hidden" name="_next" value="https://id-preview--7f2e76cd-da76-4f44-a843-a3bffd1b2099.lovable.app/#contact" />
               <input type="hidden" name="_subject" value="Nouveau message depuis le site Sefed" />
@@ -101,12 +100,12 @@ const ContactFooter = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Votre email"
+                placeholder={t(tr.emailPlaceholder, lang)}
                 required
                 className="w-full px-4 py-2.5 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 font-body text-sm text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-secondary/50"
               />
               <textarea
-                placeholder="Votre message"
+                placeholder={t(tr.messagePlaceholder, lang)}
                 name="message"
                 rows={3}
                 required
@@ -116,13 +115,12 @@ const ContactFooter = () => {
                 type="submit"
                 className="px-6 py-2.5 rounded-md bg-secondary text-secondary-foreground font-body font-semibold text-sm hover:opacity-90 transition-opacity"
               >
-                Envoyer
+                {t(tr.send, lang)}
               </button>
             </form>
           </motion.div>
         </div>
 
-        {/* Social + Bottom bar */}
         <div className="mt-16 pt-6 border-t border-primary-foreground/15 flex flex-col items-center gap-4">
           <div className="flex items-center gap-5">
             <a
@@ -145,7 +143,7 @@ const ContactFooter = () => {
             </a>
           </div>
           <p className="font-body text-xs opacity-50">
-            © {new Date().getFullYear()} Sefed Restaurant — Cuisine Éthiopienne Authentique à Montpellier
+            © {new Date().getFullYear()} {t(tr.copyright, lang)}
           </p>
         </div>
       </div>
