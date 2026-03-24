@@ -40,7 +40,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
-          className="font-body text-base md:text-lg text-primary-foreground/80 max-w-xl leading-relaxed"
+          className="font-body text-base md:text-lg text-foreground/70 max-w-xl leading-relaxed"
         >
           {t(translations.hero.description, lang)}
         </motion.p>
