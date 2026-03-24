@@ -38,8 +38,8 @@ export const translations = {
       en: "Every dish served at Sefed reflects Ethiopian cuisine at its finest, prepared with the freshest ingredients and elevated by traditional spices like Berbere and Mitmita.",
     },
     cuisineP2: {
-      fr: "Notre carte propose une grande variété de plats — des ragoûts mijotés aux émincés sautés à l'Awaze, en passant par le Kitfo, le Shiro et une sélection généreuse de plats végétariens. Le tout servi sur de l'Injera, pain au Teff légèrement acidulé, pour une expérience de partage unique.",
-      en: "Our menu offers a wide variety of dishes — from slow-cooked stews to Awaze-sautéed slices, including Kitfo, Shiro, and a generous selection of vegetarian dishes. All served on Injera, a slightly tangy Teff flatbread, for a unique sharing experience.",
+      fr: "Notre carte propose une grande variété de plats — des ragoûts mijotés aux émincés sautés à l'Awaze, en passant par le Kitfo, le Shiro et une sélection généreuse de plats végétariens. Le tout servi sur de l'Injera, pain légèrement acidulé à base de Teff, pour une expérience de partage unique.",
+      en: "Our menu offers a wide variety of dishes — from slow-cooked stews to Awaze-sautéed slices, including Kitfo, Shiro, and a generous selection of vegetarian dishes. All served on Injera, a slightly tangy flatbread made with Teff, for a unique sharing experience.",
     },
     lexiqueTitle: { fr: "Le", en: "The" },
     lexiqueSpan: { fr: "Lexique", en: "Glossary" },
