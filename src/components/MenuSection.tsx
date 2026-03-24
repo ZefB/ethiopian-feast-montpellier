@@ -22,7 +22,7 @@ const viandes: MenuItem[] = [
   { nameKey: "doroWat", price: "19€" },
   { nameKey: "dinitchBeKaro", price: "14€" },
   { nameKey: "misserEtSega", price: "17€" },
-  { nameKey: "kitfo", price: "17€ / 19€", tagKey: "soirUniquement" },
+  { nameKey: "kitfo", price: "19€", tagKey: "soirUniquement" },
 ];
 
 const vegetariens: MenuItem[] = [
