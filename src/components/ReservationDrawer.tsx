@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, Clock, Phone } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 interface ReservationDrawerProps {
   isOpen: boolean;
@@ -7,15 +9,24 @@ interface ReservationDrawerProps {
 }
 
 const ReservationDrawer = ({ isOpen, onClose }: ReservationDrawerProps) => {
+  const { lang } = useLang();
+  const tr = translations.reservation;
+
+  const schedule = [
+    { dayKey: "lundi" as const, hours: "18h30 – 22h30", closed: true },
+    { dayKey: "mardi" as const, hours: "18h30 – 22h30", closed: false },
+    { dayKey: "mercredi" as const, hours: "18h30 – 22h30", closed: false },
+    { dayKey: "jeudi" as const, hours: "18h30 – 22h30", closed: false },
+    { dayKey: "vendredi" as const, hours: "12h – 15h / 18h30 – 22h30", closed: false },
+    { dayKey: "samedi" as const, hours: "12h – 15h / 18h30 – 22h30", closed: false },
+    { dayKey: "dimanche" as const, hours: "", closed: true },
+  ];
+
   return (
     <>
-      {/* Floating button (visible when drawer is closed) */}
       {!isOpen && (
         <button
-          onClick={() => {
-            // dispatch custom event so Index can open
-            window.dispatchEvent(new CustomEvent("open-reservation"));
-          }}
+          onClick={() => window.dispatchEvent(new CustomEvent("open-reservation"))}
           className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-accent text-accent-foreground px-3 py-6 rounded-l-lg font-body font-semibold text-xs uppercase tracking-widest hover:opacity-90 transition-opacity"
           style={{
             writingMode: "vertical-rl",
@@ -23,7 +34,7 @@ const ReservationDrawer = ({ isOpen, onClose }: ReservationDrawerProps) => {
             boxShadow: "var(--shadow-warm)",
           }}
         >
-          Réserver
+          {t(tr.title, lang)}
         </button>
       )}
 
@@ -48,7 +59,7 @@ const ReservationDrawer = ({ isOpen, onClose }: ReservationDrawerProps) => {
               <div className="p-8 md:p-10">
                 <div className="flex items-center justify-between mb-10">
                   <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-                    Réserver une Table
+                    {t(tr.title, lang)}
                   </h2>
                   <button
                     onClick={onClose}
@@ -60,8 +71,7 @@ const ReservationDrawer = ({ isOpen, onClose }: ReservationDrawerProps) => {
 
                 <div className="space-y-8">
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Réservez votre table pour une expérience culinaire éthiopienne authentique.
-                    Cliquez ci-dessous pour choisir votre créneau en ligne :
+                    {t(tr.description, lang)}
                   </p>
 
                   <a
@@ -71,45 +81,35 @@ const ReservationDrawer = ({ isOpen, onClose }: ReservationDrawerProps) => {
                     className="flex items-center justify-center gap-3 w-full py-4 rounded-md bg-accent text-accent-foreground font-body font-semibold text-base uppercase tracking-wider hover:opacity-90 transition-opacity"
                   >
                     <ExternalLink className="w-5 h-5" />
-                    Réserver en ligne
+                    {t(tr.cta, lang)}
                   </a>
 
-                  {/* Hours */}
                   <div className="pt-6 border-t border-border">
                     <div className="flex items-center gap-2 mb-4">
                       <Clock className="w-5 h-5 text-secondary" />
-                      <p className="font-display text-lg font-semibold text-foreground">Horaires</p>
+                      <p className="font-display text-lg font-semibold text-foreground">{t(tr.hours, lang)}</p>
                     </div>
                     <div className="font-body text-sm text-muted-foreground space-y-2">
-                      {[
-                        { day: "Lundi", hours: "Fermé" },
-                        { day: "Mardi", hours: "18h30 – 22h30" },
-                        { day: "Mercredi", hours: "18h30 – 22h30" },
-                        { day: "Jeudi", hours: "18h30 – 22h30" },
-                        { day: "Vendredi", hours: "12h – 15h / 18h30 – 22h30" },
-                        { day: "Samedi", hours: "12h – 15h / 18h30 – 22h30" },
-                        { day: "Dimanche", hours: "Fermé" },
-                      ].map(({ day, hours }) => (
+                      {schedule.map(({ dayKey, hours, closed }) => (
                         <div
-                          key={day}
+                          key={dayKey}
                           className={`flex justify-between items-center py-2 px-4 rounded-md ${
-                            hours === "Fermé" ? "opacity-50" : "bg-muted/50"
+                            closed ? "opacity-50" : "bg-muted/50"
                           }`}
                         >
-                          <span className="font-medium text-foreground">{day}</span>
-                          <span className={hours === "Fermé" ? "text-accent font-medium" : ""}>
-                            {hours}
+                          <span className="font-medium text-foreground">{t(tr.days[dayKey], lang)}</span>
+                          <span className={closed ? "text-accent font-medium" : ""}>
+                            {closed ? t(tr.closed, lang) : hours}
                           </span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Phone */}
                   <div className="pt-6 border-t border-border">
                     <div className="flex items-center gap-2 mb-3">
                       <Phone className="w-5 h-5 text-secondary" />
-                      <p className="font-display text-lg font-semibold text-foreground">Par téléphone</p>
+                      <p className="font-display text-lg font-semibold text-foreground">{t(tr.phone, lang)}</p>
                     </div>
                     <a
                       href="tel:0659144044"
