@@ -131,6 +131,57 @@ const MenuCategory = ({
   );
 };
 
+const DrinkCategory = ({
+  title,
+  items,
+  lang,
+  delay = 0,
+}: {
+  title: string;
+  items: DrinkItem[];
+  lang: Lang;
+  delay?: number;
+}) => {
+  const di = translations.drinkItems as Record<string, { name: { fr: string; en: string }; desc: { fr: string; en: string } }>;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay }}
+      className="mb-8"
+    >
+      <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-5 border-b border-border/50 pb-2">
+        {title}
+      </h4>
+      <div className="space-y-4">
+        {items.map((item) => {
+          const data = di[item.nameKey];
+          if (!data) return null;
+          return (
+            <div key={item.nameKey} className="flex justify-between items-start gap-4">
+              <div className="flex-1">
+                <span className="font-display text-base font-semibold text-foreground">
+                  {t(data.name, lang)}
+                </span>
+                {t(data.desc, lang) && (
+                  <p className="font-body text-sm text-muted-foreground mt-0.5 leading-relaxed">
+                    {t(data.desc, lang)}
+                  </p>
+                )}
+              </div>
+              <span className="font-display text-base font-bold text-primary shrink-0">
+                {item.price}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </motion.div>
+  );
+};
+
 const MenuSection = () => {
   const { lang } = useLang();
   const tr = translations.menu;
