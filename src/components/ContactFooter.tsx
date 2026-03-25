@@ -1,7 +1,9 @@
+import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Mail, Instagram, Facebook } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { toast } from "sonner";
 
 const ContactFooter = () => {
   const { lang } = useLang();
@@ -87,14 +89,28 @@ const ContactFooter = () => {
 
             <form
               className="pt-4 space-y-3"
-              action="https://formsubmit.co/ethiosefed@gmail.com"
-              method="POST"
+              onSubmit={async (e: FormEvent<HTMLFormElement>) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                try {
+                  await fetch("https://formsubmit.co/ajax/ethiosefed@gmail.com", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    body: JSON.stringify(Object.fromEntries(formData)),
+                  });
+                  toast.success(lang === "fr" ? "Votre message a été envoyé !" : "Your message has been sent!");
+                  form.reset();
+                } catch {
+                  toast.error(lang === "fr" ? "Erreur lors de l'envoi." : "Failed to send message.");
+                }
+              }}
             >
               <div className="flex items-center gap-2 mb-1">
                 <Mail className="w-4 h-4 text-secondary" />
                 <p className="font-body font-semibold text-sm">{t(tr.contactUs, lang)}</p>
               </div>
-              <input type="hidden" name="_next" value="https://id-preview--7f2e76cd-da76-4f44-a843-a3bffd1b2099.lovable.app/#contact" />
+              
               <input type="hidden" name="_subject" value="Nouveau message depuis le site Sefed" />
               <input type="hidden" name="_captcha" value="false" />
               <input
