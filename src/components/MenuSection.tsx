@@ -10,7 +10,7 @@ interface MenuItem {
 }
 
 const entrees: MenuItem[] = [
-  { nameKey: "kitfoFourre", price: "9,90", tagKey: "soirUniquement" },
+  { nameKey: "kitfoFourre", price: "9,90€", tagKey: "soirUniquement" },
   { nameKey: "sambussaVegan", price: "5,50€", tagKey: "vegan" },
   { nameKey: "tomatoFitfit", price: "4,50€", tagKey: "vegan" },
 ];
@@ -30,7 +30,7 @@ const vegetariens: MenuItem[] = [
   { nameKey: "misser", price: "14€", tagKey: "vegan" },
   { nameKey: "kikeAlecha", price: "12€", tagKey: "vegan" },
   { nameKey: "vegeLover", price: "18€ / 32€", tagKey: "pour1ou2" },
-  { nameKey: "vegeLoverCombo", price: "40€" },
+  { nameKey: "vegeLoverCombo", price: "39,90€" },
 ];
 
 const accompagnements: MenuItem[] = [
