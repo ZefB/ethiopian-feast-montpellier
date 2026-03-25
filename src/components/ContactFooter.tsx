@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Clock, Mail, Instagram, Facebook, Compass } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { toast } from "sonner";
@@ -136,6 +136,40 @@ const ContactFooter = () => {
             </form>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-14 text-center"
+        >
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Compass className="w-5 h-5 text-secondary" />
+            <h3 className="font-display text-xl font-bold">{t(tr.aroundTitle, lang)}</h3>
+          </div>
+          <p className="font-body text-sm opacity-75 max-w-xl mx-auto mb-5">
+            {t(tr.aroundDesc, lang)}
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              "Le Corum",
+              "L'Esplanade Charles-de-Gaulle",
+              "Le Jardin des Plantes",
+              "La Cathédrale Saint-Pierre",
+              "L'Arc de Triomphe",
+              "La Place de la Comédie",
+              "La Gare Saint-Roch",
+            ].map((place) => (
+              <span
+                key={place}
+                className="px-3 py-1.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/15 font-body text-xs opacity-80"
+              >
+                {place}
+              </span>
+            ))}
+          </div>
+        </motion.div>
 
         <div className="mt-16 pt-6 border-t border-primary-foreground/15 flex flex-col items-center gap-4">
           <div className="flex items-center gap-5">

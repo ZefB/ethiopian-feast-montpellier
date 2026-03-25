@@ -351,6 +351,11 @@ export const translations = {
     emailPlaceholder: { fr: "Votre email", en: "Your email" },
     messagePlaceholder: { fr: "Votre message", en: "Your message" },
     send: { fr: "Envoyer", en: "Send" },
+    aroundTitle: { fr: "Autour du Sefed...", en: "Around Sefed..." },
+    aroundDesc: {
+      fr: "Situé entre les stations de tram Corum et Louis-Blanc (Ligne 1 & 4), le Sefed est à proximité de lieux emblématiques de Montpellier qui méritent un détour.",
+      en: "Located between the Corum and Louis-Blanc tram stations (Lines 1 & 4), Sefed is close to iconic Montpellier landmarks worth a visit.",
+    },
     copyright: {
       fr: "Sefed Restaurant — Cuisine Éthiopienne Authentique à Montpellier",
       en: "Sefed Restaurant — Authentic Ethiopian Cuisine in Montpellier",
