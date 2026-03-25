@@ -10,7 +10,7 @@ interface MenuItem {
 }
 
 const entrees: MenuItem[] = [
-  { nameKey: "kitfoFourre", price: "10€", tagKey: "soirUniquement" },
+  { nameKey: "kitfoFourre", price: "9,90", tagKey: "soirUniquement" },
   { nameKey: "sambussaVegan", price: "5,50€", tagKey: "vegan" },
   { nameKey: "tomatoFitfit", price: "4,50€", tagKey: "vegan" },
 ];
