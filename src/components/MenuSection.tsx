@@ -237,9 +237,9 @@ const MenuSection = () => {
           <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6 border-b border-border pb-3">
             {t(tr.boissons, lang)}
           </h3>
-          <p className="font-body text-muted-foreground text-sm italic">
-            {t(tr.drinksSoon, lang)}
-          </p>
+          <DrinkCategory title={t(tr.vinsEtAlcools, lang)} items={vinsAlcools} lang={lang} delay={0.32} />
+          <DrinkCategory title={t(tr.eauxEtSofts, lang)} items={eauxSofts} lang={lang} delay={0.34} />
+          <DrinkCategory title={t(tr.boissonsChaudes, lang)} items={boissonsChaudes} lang={lang} delay={0.36} />
         </motion.div>
 
         <motion.p
