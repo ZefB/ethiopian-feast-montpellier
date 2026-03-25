@@ -41,6 +41,37 @@ const accompagnements: MenuItem[] = [
   { nameKey: "mitmita", price: "1,50€" },
 ];
 
+interface DrinkItem {
+  nameKey: string;
+  price: string;
+  priceLabel?: string;
+}
+
+const vinsAlcools: DrinkItem[] = [
+  { nameKey: "athenaRouge", price: "29€", priceLabel: "bouteille" },
+  { nameKey: "metisRouge", price: "21€", priceLabel: "bouteille" },
+  { nameKey: "initialRouge", price: "4€ / 17,90€", priceLabel: "verre / bouteille" },
+  { nameKey: "initialBlanc", price: "4€ / 16,90€", priceLabel: "verre / bouteille" },
+  { nameKey: "initialRose", price: "3,50€ / 14,50€", priceLabel: "verre / bouteille" },
+  { nameKey: "tedj", price: "5,50€", priceLabel: "verre" },
+  { nameKey: "biereMoment", price: "6€" },
+];
+
+const eauxSofts: DrinkItem[] = [
+  { nameKey: "eauPlate", price: "2,50€" },
+  { nameKey: "eauPetillante", price: "4,50€" },
+  { nameKey: "soft", price: "3€" },
+  { nameKey: "jusFruits", price: "3€" },
+  { nameKey: "sirop", price: "2€" },
+];
+
+const boissonsChaudes: DrinkItem[] = [
+  { nameKey: "jebenaBuna", price: "7,50€" },
+  { nameKey: "cafe", price: "2€" },
+  { nameKey: "theEthiopien", price: "3,50€" },
+  { nameKey: "the", price: "2,50€" },
+];
+
 const MenuCategory = ({
   title,
   items,
