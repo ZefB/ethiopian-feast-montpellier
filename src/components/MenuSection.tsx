@@ -41,6 +41,37 @@ const accompagnements: MenuItem[] = [
   { nameKey: "mitmita", price: "1,50€" },
 ];
 
+interface DrinkItem {
+  nameKey: string;
+  price: string;
+  priceLabel?: string;
+}
+
+const vinsAlcools: DrinkItem[] = [
+  { nameKey: "athenaRouge", price: "29€", priceLabel: "bouteille" },
+  { nameKey: "metisRouge", price: "21€", priceLabel: "bouteille" },
+  { nameKey: "initialRouge", price: "4€ / 17,90€", priceLabel: "verre / bouteille" },
+  { nameKey: "initialBlanc", price: "4€ / 16,90€", priceLabel: "verre / bouteille" },
+  { nameKey: "initialRose", price: "3,50€ / 14,50€", priceLabel: "verre / bouteille" },
+  { nameKey: "tedj", price: "5,50€", priceLabel: "verre" },
+  { nameKey: "biereMoment", price: "6€" },
+];
+
+const eauxSofts: DrinkItem[] = [
+  { nameKey: "eauPlate", price: "2,50€" },
+  { nameKey: "eauPetillante", price: "4,50€" },
+  { nameKey: "soft", price: "3€" },
+  { nameKey: "jusFruits", price: "3€" },
+  { nameKey: "sirop", price: "2€" },
+];
+
+const boissonsChaudes: DrinkItem[] = [
+  { nameKey: "jebenaBuna", price: "7,50€" },
+  { nameKey: "cafe", price: "2€" },
+  { nameKey: "theEthiopien", price: "3,50€" },
+  { nameKey: "the", price: "2,50€" },
+];
+
 const MenuCategory = ({
   title,
   items,
@@ -90,6 +121,57 @@ const MenuCategory = ({
                 )}
               </div>
               <span className="font-display text-lg font-bold text-primary shrink-0">
+                {item.price}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </motion.div>
+  );
+};
+
+const DrinkCategory = ({
+  title,
+  items,
+  lang,
+  delay = 0,
+}: {
+  title: string;
+  items: DrinkItem[];
+  lang: Lang;
+  delay?: number;
+}) => {
+  const di = translations.drinkItems as Record<string, { name: { fr: string; en: string }; desc: { fr: string; en: string } }>;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6, delay }}
+      className="mb-8"
+    >
+      <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-5 border-b border-border/50 pb-2">
+        {title}
+      </h4>
+      <div className="space-y-4">
+        {items.map((item) => {
+          const data = di[item.nameKey];
+          if (!data) return null;
+          return (
+            <div key={item.nameKey} className="flex justify-between items-start gap-4">
+              <div className="flex-1">
+                <span className="font-display text-base font-semibold text-foreground">
+                  {t(data.name, lang)}
+                </span>
+                {t(data.desc, lang) && (
+                  <p className="font-body text-sm text-muted-foreground mt-0.5 leading-relaxed">
+                    {t(data.desc, lang)}
+                  </p>
+                )}
+              </div>
+              <span className="font-display text-base font-bold text-primary shrink-0">
                 {item.price}
               </span>
             </div>
@@ -155,9 +237,9 @@ const MenuSection = () => {
           <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6 border-b border-border pb-3">
             {t(tr.boissons, lang)}
           </h3>
-          <p className="font-body text-muted-foreground text-sm italic">
-            {t(tr.drinksSoon, lang)}
-          </p>
+          <DrinkCategory title={t(tr.vinsEtAlcools, lang)} items={vinsAlcools} lang={lang} delay={0.32} />
+          <DrinkCategory title={t(tr.eauxEtSofts, lang)} items={eauxSofts} lang={lang} delay={0.34} />
+          <DrinkCategory title={t(tr.boissonsChaudes, lang)} items={boissonsChaudes} lang={lang} delay={0.36} />
         </motion.div>
 
         <motion.p
