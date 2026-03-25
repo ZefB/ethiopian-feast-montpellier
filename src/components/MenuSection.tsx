@@ -175,9 +175,16 @@ const DrinkCategory = ({
                   </p>
                 )}
               </div>
-              <span className="font-display text-base font-bold text-primary shrink-0">
-                {item.price}
-              </span>
+              <div className="shrink-0 text-right">
+                <span className="font-display text-base font-bold text-primary">
+                  {item.price}
+                </span>
+                {item.priceLabel && (
+                  <p className="font-body text-[10px] text-muted-foreground mt-0.5">
+                    {item.priceLabel}
+                  </p>
+                )}
+              </div>
             </div>
           );
         })}
