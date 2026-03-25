@@ -30,7 +30,7 @@ const vegetariens: MenuItem[] = [
   { nameKey: "misser", price: "14€", tagKey: "vegan" },
   { nameKey: "kikeAlecha", price: "12€", tagKey: "vegan" },
   { nameKey: "vegeLover", price: "18€ / 32€", tagKey: "pour1ou2" },
-  { nameKey: "vegeLoverCombo", price: "40€" },
+  { nameKey: "vegeLoverCombo", price: "39,90€" },
 ];
 
 const accompagnements: MenuItem[] = [
