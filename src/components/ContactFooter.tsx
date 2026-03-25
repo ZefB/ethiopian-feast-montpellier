@@ -1,7 +1,9 @@
+import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Mail, Instagram, Facebook } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { toast } from "sonner";
 
 const ContactFooter = () => {
   const { lang } = useLang();
