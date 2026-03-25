@@ -110,7 +110,7 @@ const ContactFooter = () => {
                 <Mail className="w-4 h-4 text-secondary" />
                 <p className="font-body font-semibold text-sm">{t(tr.contactUs, lang)}</p>
               </div>
-              <input type="hidden" name="_next" value="https://id-preview--7f2e76cd-da76-4f44-a843-a3bffd1b2099.lovable.app/#contact" />
+              
               <input type="hidden" name="_subject" value="Nouveau message depuis le site Sefed" />
               <input type="hidden" name="_captcha" value="false" />
               <input
