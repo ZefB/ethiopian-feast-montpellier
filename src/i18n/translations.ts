@@ -243,6 +243,74 @@ export const translations = {
     },
   },
 
+  // Drinks menu
+  drinkItems: {
+    athenaRouge: {
+      name: { fr: "Domaine Maspiquet « Athena » Rouge", en: "Domaine Maspiquet 'Athena' Red" },
+      desc: { fr: "60% Marselan, 40% Petit Verdot — Nez intense et épicé aux notes de vanille. Bouche ample et structurée.", en: "60% Marselan, 40% Petit Verdot — Intense, spicy nose with vanilla notes. Full-bodied and structured." },
+    },
+    metisRouge: {
+      name: { fr: "Domaine Maspiquet « Le Métis » Rouge", en: "Domaine Maspiquet 'Le Métis' Red" },
+      desc: { fr: "100% Marselan — Nez expressif de baies des bois, de cassis et de poivre noir. Bouche équilibrée et charnue.", en: "100% Marselan — Expressive nose of wild berries, blackcurrant and black pepper. Balanced and full." },
+    },
+    initialRouge: {
+      name: { fr: "Domaine Maspiquet « Initial » Rouge", en: "Domaine Maspiquet 'Initial' Red" },
+      desc: { fr: "100% Carignan (en conversion Bio) — Nez intense aux notes de fruits confiturés et de sous-bois. Bouche souple.", en: "100% Carignan (organic conversion) — Intense nose of candied fruit and undergrowth. Supple palate." },
+    },
+    initialBlanc: {
+      name: { fr: "Domaine Maspiquet « Initial » Blanc", en: "Domaine Maspiquet 'Initial' White" },
+      desc: { fr: "100% Chardonnay — Nez typé sur des notes de badiane et de citron. Bouche profonde et onctueuse.", en: "100% Chardonnay — Distinctive nose with star anise and lemon notes. Deep and smooth palate." },
+    },
+    initialRose: {
+      name: { fr: "Domaine Maspiquet « Initial » Rosé", en: "Domaine Maspiquet 'Initial' Rosé" },
+      desc: { fr: "100% Syrah — Nez éclatant sur des notes de groseille et de fraise. Jolie bouche gourmande.", en: "100% Syrah — Bright nose of redcurrant and strawberry. Lovely, indulgent palate." },
+    },
+    tedj: {
+      name: { fr: "Tedj — Hydromel éthiopien", en: "Tedj — Ethiopian Mead" },
+      desc: { fr: "Boisson traditionnelle éthiopienne, vin de miel, fait maison et fermenté.", en: "Traditional Ethiopian honey wine, homemade and fermented." },
+    },
+    biereMoment: {
+      name: { fr: "Bière du moment", en: "Beer of the Day" },
+      desc: { fr: "33cl", en: "33cl" },
+    },
+    eauPlate: {
+      name: { fr: "Eau minérale plate", en: "Still Mineral Water" },
+      desc: { fr: "1L", en: "1L" },
+    },
+    eauPetillante: {
+      name: { fr: "Eau pétillante", en: "Sparkling Water" },
+      desc: { fr: "1L", en: "1L" },
+    },
+    soft: {
+      name: { fr: "Softs sans alcool", en: "Non-Alcoholic Soft Drinks" },
+      desc: { fr: "33cl", en: "33cl" },
+    },
+    jusFruits: {
+      name: { fr: "Jus de fruits (orange, pomme)", en: "Fruit Juice (orange, apple)" },
+      desc: { fr: "25cl", en: "25cl" },
+    },
+    sirop: {
+      name: { fr: "Sirop", en: "Syrup Drink" },
+      desc: { fr: "", en: "" },
+    },
+    jebenaBuna: {
+      name: { fr: "Jebena Buna — Café éthiopien", en: "Jebena Buna — Ethiopian Coffee" },
+      desc: { fr: "Préparé et servi dans un récipient traditionnel, accompagné de popcorn (+1€). Pour 2 personnes.", en: "Prepared and served in a traditional vessel, with popcorn (+€1). For 2 people." },
+    },
+    cafe: {
+      name: { fr: "Café", en: "Coffee" },
+      desc: { fr: "", en: "" },
+    },
+    theEthiopien: {
+      name: { fr: "Thé éthiopien", en: "Ethiopian Tea" },
+      desc: { fr: "Infusé à la cannelle, cardamome et clous de girofle. Pour 1 personne.", en: "Infused with cinnamon, cardamom, and cloves. For 1 person." },
+    },
+    the: {
+      name: { fr: "Thé", en: "Tea" },
+      desc: { fr: "", en: "" },
+    },
+  },
+
   // Reservation drawer
   reservation: {
     title: { fr: "Réserver une Table", en: "Reserve a Table" },
