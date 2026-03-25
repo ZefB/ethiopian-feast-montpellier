@@ -101,10 +101,9 @@ export const translations = {
       fr: "Nos desserts sont disponibles à la carte sur place — demandez à votre serveur !",
       en: "Our desserts are available à la carte on-site — ask your server!",
     },
-    drinksSoon: {
-      fr: "Carte des boissons à venir…",
-      en: "Drinks menu coming soon…",
-    },
+    vinsEtAlcools: { fr: "Vins & Alcools", en: "Wines & Spirits" },
+    eauxEtSofts: { fr: "Eaux & Softs", en: "Water & Soft Drinks" },
+    boissonsChaudes: { fr: "Boissons Chaudes", en: "Hot Drinks" },
     footer1: { fr: "Viandes d'origine française", en: "French-origin meats" },
     footer2: { fr: "Prix net — service compris", en: "Net prices — service included" },
     footer3: { fr: "Nous n'acceptons pas les chèques", en: "We do not accept cheques" },
