@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"; // drinks menu
+import { Leaf } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import type { Lang } from "@/i18n/translations";
@@ -10,7 +11,7 @@ interface MenuItem {
 }
 
 const entrees: MenuItem[] = [
-  { nameKey: "kitfoFourre", price: "9,90€", tagKey: "soirUniquement" },
+  { nameKey: "kitfoFourre", price: "9,90€" },
   { nameKey: "sambussaVegan", price: "5,50€", tagKey: "vegan" },
   { nameKey: "tomatoFitfit", price: "4,50€", tagKey: "vegan" },
 ];
@@ -22,7 +23,7 @@ const viandes: MenuItem[] = [
   { nameKey: "doroWat", price: "19€" },
   { nameKey: "dinitchBeKaro", price: "14€" },
   { nameKey: "misserEtSega", price: "17€" },
-  { nameKey: "kitfo", price: "19€", tagKey: "soirUniquement" },
+  { nameKey: "kitfo", price: "19€" },
 ];
 
 const vegetariens: MenuItem[] = [
@@ -109,7 +110,10 @@ const MenuCategory = ({
                     {t(data.name, lang)}
                   </span>
                   {item.tagKey && tags[item.tagKey] && (
-                    <span className="text-[10px] uppercase tracking-wider font-body font-semibold px-2 py-0.5 rounded-full bg-accent/10 text-accent">
+                    <span className={`text-[10px] uppercase tracking-wider font-body font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 ${
+                      item.tagKey === 'vegan' ? 'bg-green-100 text-green-500' : 'bg-accent/10 text-accent'
+                    }`}>
+                      {item.tagKey === 'vegan' && <Leaf className="w-3 h-3" />}
                       {t(tags[item.tagKey], lang)}
                     </span>
                   )}
