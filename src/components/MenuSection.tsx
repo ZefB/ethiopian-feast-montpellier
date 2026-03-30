@@ -219,7 +219,8 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <MenuCategory title={t(tr.entrees, lang)} items={entrees} lang={lang} />
+        <MenuCategory title={`⭐ ${t(tr.formule, lang)}`} items={formules} lang={lang} />
+        <MenuCategory title={t(tr.entrees, lang)} items={entrees} lang={lang} delay={0.05} />
         <MenuCategory title={t(tr.viandes, lang)} items={viandes} lang={lang} delay={0.1} />
         <MenuCategory title={t(tr.vegetariens, lang)} items={vegetariens} lang={lang} delay={0.15} />
         <MenuCategory title={t(tr.accompagnements, lang)} items={accompagnements} lang={lang} delay={0.2} />
