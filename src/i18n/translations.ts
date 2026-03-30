@@ -91,6 +91,7 @@ export const translations = {
       fr: "Attention : il existe des règles pour déguster l'Injera — ne jamais se lécher les doigts et manger ce qu'il y a devant vous. Bon appétit !",
       en: "Please note: there are rules for enjoying Injera — never lick your fingers and eat what's in front of you. Bon appétit!",
     },
+    formule: { fr: "Notre Formule", en: "Our Combo Meal" },
     entrees: { fr: "Entrées", en: "Starters" },
     viandes: { fr: "Plats à base de viande", en: "Meat Dishes" },
     vegetariens: { fr: "Plats végétariens", en: "Vegetarian Dishes" },

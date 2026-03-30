@@ -26,12 +26,15 @@ const viandes: MenuItem[] = [
   { nameKey: "kitfo", price: "19€" },
 ];
 
+const formules: MenuItem[] = [
+  { nameKey: "vegeLoverCombo", price: "39,90€" },
+];
+
 const vegetariens: MenuItem[] = [
   { nameKey: "shiro", price: "12€", tagKey: "vegan" },
   { nameKey: "misser", price: "14€", tagKey: "vegan" },
   { nameKey: "kikeAlecha", price: "12€", tagKey: "vegan" },
   { nameKey: "vegeLover", price: "18€ / 32€", tagKey: "pour1ou2" },
-  { nameKey: "vegeLoverCombo", price: "39,90€" },
 ];
 
 const accompagnements: MenuItem[] = [
@@ -216,7 +219,8 @@ const MenuSection = () => {
           </p>
         </motion.div>
 
-        <MenuCategory title={t(tr.entrees, lang)} items={entrees} lang={lang} />
+        <MenuCategory title={`⭐ ${t(tr.formule, lang)}`} items={formules} lang={lang} />
+        <MenuCategory title={t(tr.entrees, lang)} items={entrees} lang={lang} delay={0.05} />
         <MenuCategory title={t(tr.viandes, lang)} items={viandes} lang={lang} delay={0.1} />
         <MenuCategory title={t(tr.vegetariens, lang)} items={vegetariens} lang={lang} delay={0.15} />
         <MenuCategory title={t(tr.accompagnements, lang)} items={accompagnements} lang={lang} delay={0.2} />
