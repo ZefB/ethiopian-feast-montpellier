@@ -26,12 +26,15 @@ const viandes: MenuItem[] = [
   { nameKey: "kitfo", price: "19€" },
 ];
 
+const formules: MenuItem[] = [
+  { nameKey: "vegeLoverCombo", price: "39,90€" },
+];
+
 const vegetariens: MenuItem[] = [
   { nameKey: "shiro", price: "12€", tagKey: "vegan" },
   { nameKey: "misser", price: "14€", tagKey: "vegan" },
   { nameKey: "kikeAlecha", price: "12€", tagKey: "vegan" },
   { nameKey: "vegeLover", price: "18€ / 32€", tagKey: "pour1ou2" },
-  { nameKey: "vegeLoverCombo", price: "39,90€" },
 ];
 
 const accompagnements: MenuItem[] = [
