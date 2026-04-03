@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"; // drinks menu
 import kitfoFourreImg from "@/assets/kitfo-fourre.png";
 import shiroImg from "@/assets/shiro.png";
+import sambussaImg from "@/assets/sambussa.png";
+import tomatoFitfitImg from "@/assets/tomato-fitfit.png";
 import { Leaf } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
