@@ -34,7 +34,7 @@ const formules: MenuItem[] = [
 ];
 
 const vegetariens: MenuItem[] = [
-  { nameKey: "shiro", price: "12€", tagKey: "vegan" },
+  { nameKey: "shiro", price: "12€", tagKey: "vegan", image: shiroImg },
   { nameKey: "misser", price: "14€", tagKey: "vegan" },
   { nameKey: "kikeAlecha", price: "12€", tagKey: "vegan" },
   { nameKey: "vegeLover", price: "18€ / 32€", tagKey: "pour1ou2" },
