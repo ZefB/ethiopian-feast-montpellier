@@ -17,8 +17,8 @@ interface MenuItem {
 
 const entrees: MenuItem[] = [
   { nameKey: "kitfoFourre", price: "9,90€", image: kitfoFourreImg },
-  { nameKey: "sambussaVegan", price: "5,50€", tagKey: "vegan" },
-  { nameKey: "tomatoFitfit", price: "4,50€", tagKey: "vegan" },
+  { nameKey: "sambussaVegan", price: "5,50€", tagKey: "vegan", image: sambussaImg },
+  { nameKey: "tomatoFitfit", price: "4,50€", tagKey: "vegan", image: tomatoFitfitImg },
 ];
 
 const viandes: MenuItem[] = [
