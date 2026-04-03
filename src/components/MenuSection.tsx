@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"; // drinks menu
+import kitfoFourreImg from "@/assets/kitfo-fourre.png";
 import { Leaf } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -12,7 +13,7 @@ interface MenuItem {
 }
 
 const entrees: MenuItem[] = [
-  { nameKey: "kitfoFourre", price: "9,90€" },
+  { nameKey: "kitfoFourre", price: "9,90€", image: kitfoFourreImg },
   { nameKey: "sambussaVegan", price: "5,50€", tagKey: "vegan" },
   { nameKey: "tomatoFitfit", price: "4,50€", tagKey: "vegan" },
 ];
