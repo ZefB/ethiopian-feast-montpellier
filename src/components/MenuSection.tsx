@@ -8,6 +8,7 @@ interface MenuItem {
   nameKey: string;
   price: string;
   tagKey?: string;
+  image?: string;
 }
 
 const entrees: MenuItem[] = [
@@ -49,6 +50,7 @@ interface DrinkItem {
   nameKey: string;
   price: string;
   priceLabel?: string;
+  image?: string;
 }
 
 const vinsAlcools: DrinkItem[] = [
@@ -57,7 +59,7 @@ const vinsAlcools: DrinkItem[] = [
   { nameKey: "initialRouge", price: "4€ / 17,90€", priceLabel: "verre / bouteille" },
   { nameKey: "initialBlanc", price: "4€ / 16,90€", priceLabel: "verre / bouteille" },
   { nameKey: "initialRose", price: "3,50€ / 14,50€", priceLabel: "verre / bouteille" },
-  { nameKey: "tedj", price: "5,50€", priceLabel: "verre" },
+  { nameKey: "tedj", price: "5,50€", priceLabel: "verre", image: "" },
   { nameKey: "biereMoment", price: "6€" },
 ];
 
@@ -70,7 +72,7 @@ const eauxSofts: DrinkItem[] = [
 ];
 
 const boissonsChaudes: DrinkItem[] = [
-  { nameKey: "jebenaBuna", price: "7,50€" },
+  { nameKey: "jebenaBuna", price: "7,50€", image: "" },
   { nameKey: "cafe", price: "2€" },
   { nameKey: "theEthiopien", price: "3,50€" },
   { nameKey: "the", price: "2,50€" },
@@ -106,30 +108,41 @@ const MenuCategory = ({
           const data = mi[item.nameKey];
           if (!data) return null;
           return (
-            <div key={item.nameKey} className="flex justify-between items-start gap-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-display text-lg font-semibold text-foreground">
-                    {t(data.name, lang)}
-                  </span>
-                  {item.tagKey && tags[item.tagKey] && (
-                    <span className={`text-[10px] uppercase tracking-wider font-body font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 ${
-                      item.tagKey === 'vegan' ? 'bg-green-100 text-green-500' : 'bg-accent/10 text-accent'
-                    }`}>
-                      {item.tagKey === 'vegan' && <Leaf className="w-3 h-3" />}
-                      {t(tags[item.tagKey], lang)}
-                    </span>
-                  )}
-                </div>
-                {t(data.desc, lang) && (
-                  <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">
-                    {t(data.desc, lang)}
-                  </p>
+            <div key={item.nameKey} className="flex items-start gap-4">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-muted border border-border overflow-hidden shrink-0">
+                {item.image ? (
+                  <img src={item.image} alt={t(data.name, lang)} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-muted-foreground/40 text-[10px] font-body">
+                    Photo
+                  </div>
                 )}
               </div>
-              <span className="font-display text-lg font-bold text-primary shrink-0">
-                {item.price}
-              </span>
+              <div className="flex-1 flex justify-between items-start gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-display text-lg font-semibold text-foreground">
+                      {t(data.name, lang)}
+                    </span>
+                    {item.tagKey && tags[item.tagKey] && (
+                      <span className={`text-[10px] uppercase tracking-wider font-body font-semibold px-2 py-0.5 rounded-full flex items-center gap-1 ${
+                        item.tagKey === 'vegan' ? 'bg-green-100 text-green-500' : 'bg-accent/10 text-accent'
+                      }`}>
+                        {item.tagKey === 'vegan' && <Leaf className="w-3 h-3" />}
+                        {t(tags[item.tagKey], lang)}
+                      </span>
+                    )}
+                  </div>
+                  {t(data.desc, lang) && (
+                    <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">
+                      {t(data.desc, lang)}
+                    </p>
+                  )}
+                </div>
+                <span className="font-display text-lg font-bold text-primary shrink-0">
+                  {item.price}
+                </span>
+              </div>
             </div>
           );
         })}
@@ -167,26 +180,39 @@ const DrinkCategory = ({
           const data = di[item.nameKey];
           if (!data) return null;
           return (
-            <div key={item.nameKey} className="flex justify-between items-start gap-4">
-              <div className="flex-1">
-                <span className="font-display text-base font-semibold text-foreground">
-                  {t(data.name, lang)}
-                </span>
-                {t(data.desc, lang) && (
-                  <p className="font-body text-sm text-muted-foreground mt-0.5 leading-relaxed">
-                    {t(data.desc, lang)}
-                  </p>
-                )}
-              </div>
-              <div className="shrink-0 text-right">
-                <span className="font-display text-base font-bold text-primary">
-                  {item.price}
-                </span>
-                {item.priceLabel && (
-                  <p className="font-body text-[10px] text-muted-foreground mt-0.5">
-                    {item.priceLabel}
-                  </p>
-                )}
+            <div key={item.nameKey} className="flex items-start gap-4">
+              {item.image !== undefined && (
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg bg-muted border border-border overflow-hidden shrink-0">
+                  {item.image ? (
+                    <img src={item.image} alt={t(data.name, lang)} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground/40 text-[10px] font-body">
+                      Photo
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="flex-1 flex justify-between items-start gap-4">
+                <div className="flex-1">
+                  <span className="font-display text-base font-semibold text-foreground">
+                    {t(data.name, lang)}
+                  </span>
+                  {t(data.desc, lang) && (
+                    <p className="font-body text-sm text-muted-foreground mt-0.5 leading-relaxed">
+                      {t(data.desc, lang)}
+                    </p>
+                  )}
+                </div>
+                <div className="shrink-0 text-right">
+                  <span className="font-display text-base font-bold text-primary">
+                    {item.price}
+                  </span>
+                  {item.priceLabel && (
+                    <p className="font-body text-[10px] text-muted-foreground mt-0.5">
+                      {item.priceLabel}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           );
