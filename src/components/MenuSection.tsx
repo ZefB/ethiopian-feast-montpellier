@@ -72,7 +72,7 @@ const eauxSofts: DrinkItem[] = [
 ];
 
 const boissonsChaudes: DrinkItem[] = [
-  { nameKey: "jebenaBuna", price: "7,50€" },
+  { nameKey: "jebenaBuna", price: "7,50€", image: "" },
   { nameKey: "cafe", price: "2€" },
   { nameKey: "theEthiopien", price: "3,50€" },
   { nameKey: "the", price: "2,50€" },
