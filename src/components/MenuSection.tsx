@@ -50,6 +50,7 @@ interface DrinkItem {
   nameKey: string;
   price: string;
   priceLabel?: string;
+  image?: string;
 }
 
 const vinsAlcools: DrinkItem[] = [
