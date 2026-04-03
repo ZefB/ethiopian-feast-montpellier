@@ -8,6 +8,7 @@ interface MenuItem {
   nameKey: string;
   price: string;
   tagKey?: string;
+  image?: string;
 }
 
 const entrees: MenuItem[] = [
