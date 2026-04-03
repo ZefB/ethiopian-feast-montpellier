@@ -180,26 +180,39 @@ const DrinkCategory = ({
           const data = di[item.nameKey];
           if (!data) return null;
           return (
-            <div key={item.nameKey} className="flex justify-between items-start gap-4">
-              <div className="flex-1">
-                <span className="font-display text-base font-semibold text-foreground">
-                  {t(data.name, lang)}
-                </span>
-                {t(data.desc, lang) && (
-                  <p className="font-body text-sm text-muted-foreground mt-0.5 leading-relaxed">
-                    {t(data.desc, lang)}
-                  </p>
-                )}
-              </div>
-              <div className="shrink-0 text-right">
-                <span className="font-display text-base font-bold text-primary">
-                  {item.price}
-                </span>
-                {item.priceLabel && (
-                  <p className="font-body text-[10px] text-muted-foreground mt-0.5">
-                    {item.priceLabel}
-                  </p>
-                )}
+            <div key={item.nameKey} className="flex items-start gap-4">
+              {item.image !== undefined && (
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg bg-muted border border-border overflow-hidden shrink-0">
+                  {item.image ? (
+                    <img src={item.image} alt={t(data.name, lang)} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground/40 text-[10px] font-body">
+                      Photo
+                    </div>
+                  )}
+                </div>
+              )}
+              <div className="flex-1 flex justify-between items-start gap-4">
+                <div className="flex-1">
+                  <span className="font-display text-base font-semibold text-foreground">
+                    {t(data.name, lang)}
+                  </span>
+                  {t(data.desc, lang) && (
+                    <p className="font-body text-sm text-muted-foreground mt-0.5 leading-relaxed">
+                      {t(data.desc, lang)}
+                    </p>
+                  )}
+                </div>
+                <div className="shrink-0 text-right">
+                  <span className="font-display text-base font-bold text-primary">
+                    {item.price}
+                  </span>
+                  {item.priceLabel && (
+                    <p className="font-body text-[10px] text-muted-foreground mt-0.5">
+                      {item.priceLabel}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           );
