@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"; // drinks menu
+import kitfoFourreImg from "@/assets/kitfo-fourre.png";
 import { Leaf } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
