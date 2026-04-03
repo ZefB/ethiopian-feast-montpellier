@@ -113,15 +113,17 @@ const MenuCategory = ({
           if (!data) return null;
           return (
             <div key={item.nameKey} className="flex items-start gap-4">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-muted border border-border overflow-hidden shrink-0">
-                {item.image ? (
-                  <img src={item.image} alt={t(data.name, lang)} className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground/40 text-[10px] font-body">
-                    Photo
-                  </div>
-                )}
-              </div>
+              {item.image !== undefined && (
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-muted border border-border overflow-hidden shrink-0">
+                  {item.image ? (
+                    <img src={item.image} alt={t(data.name, lang)} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground/40 text-[10px] font-body">
+                      Photo
+                    </div>
+                  )}
+                </div>
+              )}
               <div className="flex-1 flex justify-between items-start gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
