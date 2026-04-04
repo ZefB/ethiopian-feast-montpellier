@@ -44,8 +44,8 @@ export const translations = {
     lexiqueTitle: { fr: "Le", en: "The" },
     lexiqueSpan: { fr: "Lexique", en: "Glossary" },
     lexiqueSubtitle: {
-      fr: "Découvrez les termes essentiels de la gastronomie éthiopienne.",
-      en: "Discover the essential terms of Ethiopian gastronomy.",
+      fr: "Découvrez les termes essentiels de la cuisine et culture éthiopienne.",
+      en: "Discover the essential terms of Ethiopian cuisine and culture.",
     },
   },
 
