@@ -181,7 +181,7 @@ export const translations = {
       },
     },
     kitfo: {
-      name: { fr: "Kitfo", en: "Kitfo" },
+      name: { fr: "Kitfo Spécial", en: "Special Kitfo" },
       desc: {
         fr: "Steak tartare éthiopien : bœuf extra maigre haché, assaisonné aux herbes Mitmita et épices éthiopiennes, légèrement grillé. Accompagné d'Aïeb et d'épinards hachés aux épices éthiopiennes.",
         en: "Ethiopian steak tartare: extra lean minced beef seasoned with Mitmita herbs and Ethiopian spices, lightly grilled. Served with Aïeb and Ethiopian-spiced chopped spinach.",
