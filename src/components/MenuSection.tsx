@@ -64,7 +64,7 @@ const vinsAlcools: DrinkItem[] = [
   { nameKey: "initialRouge", price: "4€ / 17,90€", priceLabel: "verre / bouteille" },
   { nameKey: "initialBlanc", price: "4€ / 16,90€", priceLabel: "verre / bouteille" },
   { nameKey: "initialRose", price: "3,50€ / 14,50€", priceLabel: "verre / bouteille" },
-  { nameKey: "tedj", price: "5,50€", priceLabel: "verre", image: "" },
+  { nameKey: "tedj", price: "5,50€", priceLabel: "verre", image: tedjImg },
   { nameKey: "biereMoment", price: "6€" },
 ];
 
