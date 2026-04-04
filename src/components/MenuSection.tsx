@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"; // drinks menu
 import kitfoFourreImg from "@/assets/kitfo-fourre.png";
+import kitfoSpecialImg from "@/assets/kitfo-special.png";
 import shiroImg from "@/assets/shiro.png";
 import sambussaImg from "@/assets/sambussa.png";
 import tomatoFitfitImg from "@/assets/tomato-fitfit.png";
