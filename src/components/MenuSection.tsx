@@ -30,7 +30,7 @@ const viandes: MenuItem[] = [
   { nameKey: "doroWat", price: "19€" },
   { nameKey: "dinitchBeKaro", price: "14€" },
   { nameKey: "misserEtSega", price: "17€" },
-  { nameKey: "kitfo", price: "19€" },
+  { nameKey: "kitfo", price: "19€", image: kitfoSpecialImg },
 ];
 
 const formules: MenuItem[] = [
