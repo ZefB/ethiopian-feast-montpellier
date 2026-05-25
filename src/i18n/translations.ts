@@ -398,6 +398,7 @@ export const translations = {
   },
 } as const;
 
-export function t(obj: { fr: string; en: string; am: string }, lang: Lang): string {
+export function t(obj: { fr: string; en: string; am?: string }, lang: Lang): string {
+  if (lang === "am") return obj.am ?? obj.en;
   return obj[lang];
 }
