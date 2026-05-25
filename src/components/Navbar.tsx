@@ -1,9 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import sefedLogo from "@/assets/sefed-logo.png";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+
+const LANG_OPTIONS = [
+  { code: "en" as const, label: "English", flag: "🇺🇸" },
+  { code: "fr" as const, label: "Français", flag: "🇫🇷" },
+  { code: "am" as const, label: "አማርኛ", flag: "🇪🇹" },
+];
 
 interface NavbarProps {
   onOpenReservation?: () => void;
@@ -13,6 +25,7 @@ const Navbar = ({ onOpenReservation }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { lang, setLang } = useLang();
+  const currentLang = LANG_OPTIONS.find((l) => l.code === lang) ?? LANG_OPTIONS[1];
 
   const navLinks = [
     { label: t(translations.nav.accueil, lang), href: "#" },
@@ -81,29 +94,62 @@ const Navbar = ({ onOpenReservation }: NavbarProps) => {
             )
           )}
 
-          {/* Language toggle */}
-          <button
-            onClick={() => setLang(lang === "fr" ? "en" : "fr")}
-            className={`flex items-center gap-1.5 font-body text-xs font-semibold uppercase tracking-wider transition-colors ${
-              scrolled
-                ? "text-foreground hover:text-primary"
-                : "text-primary-foreground/90 hover:text-primary-foreground"
-            }`}
-            aria-label="Toggle language"
-          >
-            <Globe className="w-4 h-4" />
-            {lang === "fr" ? "EN" : "FR"}
-          </button>
+          {/* Language dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={`flex items-center gap-1.5 font-body text-xs font-semibold uppercase tracking-wider transition-colors ${
+                  scrolled
+                    ? "text-foreground hover:text-primary"
+                    : "text-primary-foreground/90 hover:text-primary-foreground"
+                }`}
+                aria-label="Select language"
+              >
+                <span className="text-base leading-none">{currentLang.flag}</span>
+                {currentLang.code}
+                <ChevronDown className="w-3 h-3" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-[10rem]">
+              {LANG_OPTIONS.map((opt) => (
+                <DropdownMenuItem
+                  key={opt.code}
+                  onClick={() => setLang(opt.code)}
+                  className="gap-2 cursor-pointer"
+                >
+                  <span className="text-base leading-none">{opt.flag}</span>
+                  <span className="font-body text-sm">{opt.label}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Mobile toggle */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={() => setLang(lang === "fr" ? "en" : "fr")}
-            className={`p-2 font-body text-xs font-bold uppercase ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
-          >
-            {lang === "fr" ? "EN" : "FR"}
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={`flex items-center gap-1 p-2 font-body text-xs font-bold uppercase ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+                aria-label="Select language"
+              >
+                <span className="text-base leading-none">{currentLang.flag}</span>
+                {currentLang.code}
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-[10rem]">
+              {LANG_OPTIONS.map((opt) => (
+                <DropdownMenuItem
+                  key={opt.code}
+                  onClick={() => setLang(opt.code)}
+                  className="gap-2 cursor-pointer"
+                >
+                  <span className="text-base leading-none">{opt.flag}</span>
+                  <span className="font-body text-sm">{opt.label}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
