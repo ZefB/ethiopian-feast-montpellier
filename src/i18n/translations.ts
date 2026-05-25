@@ -1,13 +1,13 @@
-export type Lang = "fr" | "en";
+export type Lang = "fr" | "en" | "am";
 
 export const translations = {
   // Navbar
   nav: {
-    accueil: { fr: "Accueil", en: "Home" },
-    restaurant: { fr: "Le Restaurant", en: "The Restaurant" },
-    menu: { fr: "Menu", en: "Menu" },
-    reserver: { fr: "Réserver", en: "Reserve" },
-    contact: { fr: "Contact", en: "Contact" },
+    accueil: { fr: "Accueil", en: "Home", am: "መነሻ" },
+    restaurant: { fr: "Le Restaurant", en: "The Restaurant", am: "ሬስቶራንቱ" },
+    menu: { fr: "Menu", en: "Menu", am: "ምናሌ" },
+    reserver: { fr: "Réserver", en: "Reserve", am: "ቦታ ያዙ" },
+    contact: { fr: "Contact", en: "Contact", am: "አግኙን" },
   },
 
   // Hero
@@ -364,6 +364,7 @@ export const translations = {
   },
 } as const;
 
-export function t(obj: { fr: string; en: string }, lang: Lang): string {
+export function t(obj: { fr: string; en: string; am?: string }, lang: Lang): string {
+  if (lang === "am") return obj.am ?? obj.en;
   return obj[lang];
 }
