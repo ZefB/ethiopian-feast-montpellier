@@ -187,14 +187,6 @@ export const translations = {
         am: "ባህላዊ የበዓል ምግብ። ለ6 ሰዓታት የበሰለ ድስ፣ በበርበሬ የተቀመመ ዶሮ፣ የተቀቀለ እንቁላል፣ አይብና የኢትዮጵያ ሰላጣ።",
       },
     },
-    dinitchBeKaro: {
-      name: { fr: "Dinitch be Karo Aleche", en: "Dinitch be Karo Aleche", am: "ድንች በካሮት አለቻ" },
-      desc: {
-        fr: "Ragoût de pommes de terre et carottes mijotées dans une sauce éthiopienne parfumée aux épices traditionnelles.",
-        en: "Potato and carrot stew simmered in a traditional Ethiopian spiced sauce.",
-        am: "በባህላዊ የኢትዮጵያ ቅመማ ቅመሞች በታሸ ድስ ውስጥ የበሰለ የድንችና ካሮት ወጥ።",
-      },
-    },
     misserEtSega: {
       name: { fr: "Misser et Sega", en: "Misser et Sega", am: "ምስር እና ስጋ" },
       desc: {
