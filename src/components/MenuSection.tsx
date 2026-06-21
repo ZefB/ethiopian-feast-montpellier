@@ -28,7 +28,7 @@ const viandes: MenuItem[] = [
   { nameKey: "awazeTibsBoeuf", price: "18€" },
   { nameKey: "doroTibs", price: "16€" },
   { nameKey: "doroWat", price: "19€" },
-  { nameKey: "dinitchBeKaro", price: "14€" },
+  
   { nameKey: "misserEtSega", price: "17€" },
   { nameKey: "kitfo", price: "19€", image: kitfoSpecialImg },
 ];
