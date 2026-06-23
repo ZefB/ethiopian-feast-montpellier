@@ -14,7 +14,7 @@ export const translations = {
   hero: {
     subtitle: { fr: "Cuisine Éthiopienne Authentique", en: "Authentic Ethiopian Cuisine", am: "ትክክለኛ የኢትዮጵያ ምግብ" },
     description: {
-      fr: "Découvrez les saveurs authentiques de l'Éthiopie à Montpellier, où chaque bouchée est une invitation au voyage culinaire.",
+      fr: "Découvrez les saveurs authentiques de l'Éthiopie à Montpellier, où chaque bouchée est une invitation au voyage culinaire .",
       en: "Discover the authentic flavors of Ethiopia in Montpellier, where every bite is an invitation to a culinary journey.",
       am: "በሞንፔሊዬ ውስጥ የኢትዮጵያን ትክክለኛ ጣዕም ያግኙ፤ እያንዳንዱ ጉርሻ ወደ የምግብ ጉዞ የሚጋብዝ ነው።",
     },
